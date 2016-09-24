@@ -1,9 +1,9 @@
-package com.dsalproblems.main;
+package com.dsalproblems.mainsmall;
 
 import com.dsalproblems.dsalproblems.ArrayReverse;
 
 /**
- * The main class.
+ * The mainsmall class.
  */
 public class Main {
 
