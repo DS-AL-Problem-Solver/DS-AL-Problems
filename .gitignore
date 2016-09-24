@@ -45,5 +45,6 @@ local.properties
 *.swp
 
 #intellij files
+*.idea/*
 **/workspace.xml
 **/misc.xml
