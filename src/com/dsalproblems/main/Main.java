@@ -201,6 +201,7 @@ public class Main {
                                 array[index] = num;
                             }
                         }
+
                         ArrayLeftRotation arrayLeftRotation = new ArrayLeftRotation();
                         int[] result = arrayLeftRotation.leftRotateArray(array, arraySize, numRotations);
                         //System.out.println("Printing the array after left rotation is done:");
