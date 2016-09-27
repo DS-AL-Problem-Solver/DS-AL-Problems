@@ -31,7 +31,7 @@ package com.dsalproblems.dsalproblems;
 import java.util.*;
 
 /**
- * This class holds the logic of reversing a given array
+ * This class holds the logic of reversing a given array.
  */
 public class ArrayReverse {
 

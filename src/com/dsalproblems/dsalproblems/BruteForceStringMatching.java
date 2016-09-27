@@ -6,6 +6,7 @@ package com.dsalproblems.dsalproblems;
 public class BruteForceStringMatching {
     /**
      * This method checks if a given pattern exits in a given text by using the brute force algorithm.
+     *
      * @param text The given text.
      * @param pattern The given pattern.
      * @param textLength The length of the given text.
