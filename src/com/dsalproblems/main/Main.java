@@ -1,5 +1,6 @@
 package com.dsalproblems.main;
 
+import com.dsalproblems.dsalproblems.ArrayLeftRotation;
 import com.dsalproblems.dsalproblems.ArrayReverse;
 import com.dsalproblems.dsalproblems.BruteForceStringMatching;
 import com.dsalproblems.dsalproblems.QuickSortInPlace;
@@ -11,10 +12,16 @@ import java.util.Scanner;
  */
 public class Main {
 
+    /**
+     * This is the main method.
+     *
+     * @param args Main method arguments.
+     */
     public static void main(String[] args) {
         //testArrayReverse();
         //testBruteForceStringMatching();
-        testQuickSortInPlace();
+        //testQuickSortInPlace();
+        //testArrayLeftRotation();
     }
 
     /**
@@ -74,10 +81,10 @@ public class Main {
             return;
         }
 
-        if (arraySize < 1) {
-            System.out.println("Array size has to be at least 1.");
+        if (arraySize < 0) {
+            System.out.println("Array size cannot be negative.");
         } else if (arraySize < 1 || arraySize > 5000) {
-            System.out.println("Array size out of range.");
+            System.out.println("Array size out of range: 1 to 5000");
         } else {
 			/* Array elements */
             if (!stdin.hasNextLine()) {
@@ -122,6 +129,89 @@ public class Main {
                         System.out.print(result[index] + " ");
                     }
                     System.out.println();
+                }
+            }
+        }
+    }
+
+    /**
+     * This method tests the logic of performing left rotation on a given array.
+     */
+    private static void testArrayLeftRotation() {
+        String line;
+        Scanner stdin = new Scanner(System.in);
+
+        /* Taking the standard inputs */
+        line = stdin.nextLine();
+        line = line.trim();
+
+        int arraySize;
+        int numRotations;
+
+        String[] line1Tokens = line.split(" ");
+
+        if (line1Tokens.length != 2) {
+            System.out.println("Wrong input.");
+        } else {
+            try {
+                arraySize = Integer.parseInt(line1Tokens[0]);
+                numRotations = Integer.parseInt(line1Tokens[1]);
+            } catch (NumberFormatException e) {
+                System.out.println("Array size and number of rotations must be numbers.");
+                return;
+            }
+
+            if (arraySize < 0) {
+                System.out.println("Array size cannot be negative.");
+            } else if (arraySize < 1 || arraySize > 100000) {
+                System.out.println("Array size out of range: 1 to 100000");
+            } else if (numRotations < 1 || numRotations > arraySize) {
+                System.out.println("Invalid number of rotations.");
+            } else {
+                /* Array elements */
+                if (!stdin.hasNextLine()) {
+                    System.out.println("Array elements should be input.");
+                } else {
+                    line = stdin.nextLine();
+                    line = line.trim();
+                    String[] line2Tokens = line.split(" ");
+
+                    //System.out.println("Printing the input array");
+                    for (int index = 0 ; index < line2Tokens.length ; ++index) {
+                        //System.out.print(line2Tokens[index] + " ");
+                    }
+                    //System.out.println();
+
+                    /* Array size should match the number of elements */
+                    if (line2Tokens.length != arraySize) {
+                        System.out.println("Array size doesn't match the number of elements.");
+                    } else {
+                        int[] array = new int[arraySize];
+                        for (int index = 0; index <= arraySize -1 ; ++index) {
+                            int num = 0;
+                            /* Each element has to be a number */
+                            try {
+                                num = Integer.parseInt(line2Tokens[index]);
+                            } catch (NumberFormatException e) {
+                                System.out.println("Each element should be a number.");
+                                return;
+                            }
+                            if (num < 1 || num > 1000000) {
+                                System.out.println("Element value out of range: " + num);
+                                return;
+                            } else {
+                                array[index] = num;
+                            }
+                        }
+
+                        ArrayLeftRotation arrayLeftRotation = new ArrayLeftRotation();
+                        int[] result = arrayLeftRotation.leftRotateArray(array, arraySize, numRotations);
+                        //System.out.println("Printing the array after left rotation is done:");
+                        for (int index = 0 ; index <= arraySize - 1 ; ++index) {
+                            System.out.print(result[index] + " ");
+                        }
+                        System.out.println();
+                    }
                 }
             }
         }
