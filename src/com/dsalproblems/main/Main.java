@@ -21,7 +21,7 @@ public class Main {
         //testArrayReverse();
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
-        testArrayLeftRotation();
+        //testArrayLeftRotation();
     }
 
     /**
@@ -81,10 +81,10 @@ public class Main {
             return;
         }
 
-        if (arraySize < 1) {
-            System.out.println("Array size has to be at least 1.");
+        if (arraySize < 0) {
+            System.out.println("Array size cannot be negative.");
         } else if (arraySize < 1 || arraySize > 5000) {
-            System.out.println("Array size out of range.");
+            System.out.println("Array size out of range: 1 to 5000");
         } else {
 			/* Array elements */
             if (!stdin.hasNextLine()) {
@@ -164,7 +164,7 @@ public class Main {
             if (arraySize < 0) {
                 System.out.println("Array size cannot be negative.");
             } else if (arraySize < 1 || arraySize > 100000) {
-                System.out.println("Array size out of range.");
+                System.out.println("Array size out of range: 1 to 100000");
             } else if (numRotations < 1 || numRotations > arraySize) {
                 System.out.println("Invalid number of rotations.");
             } else {
