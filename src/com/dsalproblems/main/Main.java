@@ -161,7 +161,9 @@ public class Main {
                 return;
             }
 
-            if (arraySize < 1 || arraySize > 100000) {
+            if (arraySize < 0) {
+                System.out.println("Array size cannot be negative.");
+            } else if (arraySize < 1 || arraySize > 100000) {
                 System.out.println("Array size out of range.");
             } else if (numRotations < 1 || numRotations > arraySize) {
                 System.out.println("Invalid number of rotations.");
