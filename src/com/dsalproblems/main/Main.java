@@ -252,45 +252,4 @@ public class Main {
             System.out.println("At least one of the arrays was null.");
         }
     }
-
-    private static void testListMax() {
-        ListMax listMax = new ListMax();
-        int N = 0;
-        int M = 0;
-        int[][] inputArray;
-
-        String line;
-        Scanner stdin = new Scanner(System.in);
-
-        /* Taking the standard inputs */
-        line = stdin.nextLine();
-        line = line.trim();
-
-        String[] line1Tokens = line.split(" ");
-
-        if (line1Tokens.length != 2) {
-            System.out.println("Wrong input.");
-        } else {
-            N = Integer.parseInt(line1Tokens[0]);
-            M = Integer.parseInt(line1Tokens[1]);
-
-            inputArray = new int[M][3];
-
-            for (int r = 0 ; r < M ; ++r) {
-                if (!stdin.hasNextLine()) {
-                    System.out.println("Array elements should be input.");
-                } else {
-                    line = stdin.nextLine();
-                    line = line.trim();
-                    String[] line2Tokens = line.split(" ");
-
-                    inputArray[r][0] = Integer.parseInt(line2Tokens[0]);
-                    inputArray[r][1] = Integer.parseInt(line2Tokens[1]);
-                    inputArray[r][2] = Integer.parseInt(line2Tokens[2]);
-                }
-            }
-
-            System.out.println(listMax.findListMaxAfterMOperations(N, inputArray));
-        }
-    }
 }
