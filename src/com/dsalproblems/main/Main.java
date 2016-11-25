@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,8 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testMergeArrays();
+        //testListMax();
     }
 
     /**
@@ -214,6 +213,84 @@ public class Main {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * This method tests the logic of merging two sorted arrays of integers.
+     */
+    private static void testMergeArrays() {
+        int[] array1 = new int[]{-4, -3, 48, 104, 785};
+        int[] array2 = new int[]{-7, -2, 103, 879};
+
+        if(array1 != null) {
+            System.out.println("This is array one.");
+            for (int n = 0; n < array1.length; ++n) {
+                System.out.print(array1[n] + " ");
+            }
+            System.out.println();
+        }
+
+        if (array2 != null) {
+            System.out.println("This is array two.");
+            for (int p = 0; p < array2.length; ++p) {
+                System.out.print(array2[p] + " ");
+            }
+            System.out.println();
+        }
+
+        MergeArrays mergeArrays = new MergeArrays();
+        int[] resultArray = mergeArrays.mergeArrays(array1, array2);
+
+        if (resultArray != null) {
+            System.out.println("This is the merged array.");
+            for (int m = 0; m < resultArray.length; ++m) {
+                System.out.print(resultArray[m] + " ");
+            }
+            System.out.println();
+        } else {
+            System.out.println("At least one of the arrays was null.");
+        }
+    }
+
+    private static void testListMax() {
+        ListMax listMax = new ListMax();
+        int N = 0;
+        int M = 0;
+        int[][] inputArray;
+
+        String line;
+        Scanner stdin = new Scanner(System.in);
+
+        /* Taking the standard inputs */
+        line = stdin.nextLine();
+        line = line.trim();
+
+        String[] line1Tokens = line.split(" ");
+
+        if (line1Tokens.length != 2) {
+            System.out.println("Wrong input.");
+        } else {
+            N = Integer.parseInt(line1Tokens[0]);
+            M = Integer.parseInt(line1Tokens[1]);
+
+            inputArray = new int[M][3];
+
+            for (int r = 0 ; r < M ; ++r) {
+                if (!stdin.hasNextLine()) {
+                    System.out.println("Array elements should be input.");
+                } else {
+                    line = stdin.nextLine();
+                    line = line.trim();
+                    String[] line2Tokens = line.split(" ");
+
+                    inputArray[r][0] = Integer.parseInt(line2Tokens[0]);
+                    inputArray[r][1] = Integer.parseInt(line2Tokens[1]);
+                    inputArray[r][2] = Integer.parseInt(line2Tokens[2]);
+                }
+            }
+
+            System.out.println(listMax.findListMaxAfterMOperations(N, inputArray));
         }
     }
 }
