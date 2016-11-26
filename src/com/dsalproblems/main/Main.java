@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testSubstringMatchProblem();
     }
 
     /**
@@ -213,6 +211,52 @@ public class Main {
                         System.out.println();
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Tests the substring matching problem.
+     */
+    private static void testSubstringMatchProblem() {
+        String line;
+        Scanner stdin = new Scanner(System.in);
+
+        /* Taking the standard inputs */
+        line = stdin.nextLine();
+        line = line.trim();
+        int numberOfInputs;
+        try {
+            numberOfInputs = Integer.parseInt(line);
+            // System.out.println("Number of inputs: " + numberOfInputs);
+        } catch (NumberFormatException e) {
+            System.out.println("Number of inputs should be a number.");
+            return;
+        }
+
+        for (int i = 0 ; i < numberOfInputs ; ++i) {
+            String stringA, stringB;
+            if (!stdin.hasNextLine()) {
+                System.out.println("String pairs should be input.");
+                return;
+            } else {
+                line = stdin.nextLine();
+                stringA = line.trim();
+            }
+
+            if (!stdin.hasNextLine()) {
+                System.out.println("String pairs should be input.");
+                return;
+            } else {
+                line = stdin.nextLine();
+                stringB = line.trim();
+            }
+
+            SubstringMatchProblem substringMatchProblem = new SubstringMatchProblem();
+            if (substringMatchProblem.matchTwoStringsForCommonSubstring(stringA, stringB)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
             }
         }
     }
