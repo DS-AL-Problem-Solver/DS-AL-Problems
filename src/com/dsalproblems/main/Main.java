@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testCamelCaseString();
     }
 
     /**
@@ -215,5 +213,15 @@ public class Main {
                 }
             }
         }
+    }
+
+    /**
+     * Tests the logic of printing the number fo words in the camel case string.
+     */
+    private static void testCamelCaseString() {
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        CamelCaseString camelCaseString = new CamelCaseString();
+        camelCaseString.printNumberOfWords(s);
     }
 }
