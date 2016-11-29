@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testAStringForPangram();
     }
 
     /**
@@ -214,6 +212,20 @@ public class Main {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * This method tests the logic of finding if the given string is a pangram or not.
+     */
+    private static void testAStringForPangram() {
+        Scanner in = new Scanner(System.in);
+        String givenString = in.nextLine();
+        Pangrams pangrams = new Pangrams();
+        if (pangrams.isPangram(givenString)) {
+            System.out.println("Pangram");
+        } else {
+            System.out.println("Not Pangram");
         }
     }
 }
