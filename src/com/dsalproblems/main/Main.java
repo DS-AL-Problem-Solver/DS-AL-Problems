@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testTwoSumImplementation();
     }
 
     /**
@@ -215,5 +213,24 @@ public class Main {
                 }
             }
         }
+    }
+
+    /**
+     * Tests the two-sum implementation logic.
+     */
+    private static void testTwoSumImplementation() {
+        TwoSum twoSum = new TwoSumImplementation();
+        twoSum.store(1);
+        twoSum.store(-2);
+        twoSum.store(3);
+        twoSum.store(6);
+        System.out.println(twoSum.test(4) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(-1) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(9) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(10) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(5) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(0) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(1) ? "Exists" : "Doesn't exist");
+        System.out.println(twoSum.test(7) ? "Exists" : "Doesn't exist");
     }
 }
