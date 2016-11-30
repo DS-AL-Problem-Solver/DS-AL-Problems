@@ -1,9 +1,6 @@
 package com.dsalproblems.main;
 
-import com.dsalproblems.dsalproblems.ArrayLeftRotation;
-import com.dsalproblems.dsalproblems.ArrayReverse;
-import com.dsalproblems.dsalproblems.BruteForceStringMatching;
-import com.dsalproblems.dsalproblems.QuickSortInPlace;
+import com.dsalproblems.dsalproblems.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,7 @@ public class Main {
         //testBruteForceStringMatching();
         //testQuickSortInPlace();
         //testArrayLeftRotation();
+        testParenthesesMatch();
     }
 
     /**
@@ -214,6 +212,20 @@ public class Main {
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * Tests the logic of parentheses match.
+     */
+    private static void testParenthesesMatch() {
+        Scanner in = new Scanner(System.in);
+        String givenString = in.nextLine();
+        ParenthesesMatch parentheses = new ParenthesesMatch();
+        if (parentheses.matched(givenString)) {
+            System.out.println("Parentheses match.");
+        } else {
+            System.out.println("Parentheses did not match.");
         }
     }
 }
